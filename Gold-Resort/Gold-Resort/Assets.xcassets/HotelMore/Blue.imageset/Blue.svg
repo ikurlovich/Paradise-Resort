@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group-Copy">
+    <path d="M0 0L6 6" id="Line" fill="none" fill-rule="evenodd" stroke="#2F98FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M6 6L0 12" id="Line" fill="none" fill-rule="evenodd" stroke="#2F98FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
