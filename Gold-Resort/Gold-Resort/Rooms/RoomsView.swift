@@ -28,7 +28,7 @@ struct RoomsView: View {
                                     Color("HotelBlockBackground")
                                     
                                     VStack {
-                                        SliderImagesUI(quantityImages: rooms[index].image_urls.count, nameImages: rooms[index].image_urls)
+                                        SliderImagesRoomsUI(quantityImages: rooms[index].image_urls.count, nameImages: rooms[index].image_urls)
                                         NameHotelText(nameHotel: rooms[index].name)
                                         PeculiaritiesUI(about: rooms[index].peculiarities)
                                         RoomsButtonBlueUI()
