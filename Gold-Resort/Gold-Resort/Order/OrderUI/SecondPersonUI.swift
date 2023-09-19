@@ -19,8 +19,8 @@ struct SecondPersonUI: View {
             VStack {
                 VStack() {
                     HStack {
-                        NameHotelText(nameHotel: "Первый турист")
-                        (vm.isShowFirst ? Image("Up") : Image("Down"))
+                        NameHotelText(nameHotel: "\(namePerson) турист")
+                        (!vm.isShowFirst ? Image("Up") : Image("Down"))
                             .padding(.horizontal)
                             .onTapGesture {
                                 vm.isShowFirst.toggle()
@@ -30,7 +30,7 @@ struct SecondPersonUI: View {
                 }
                 .padding(.vertical)
                 
-                if vm.isShowFirst {
+                if !vm.isShowFirst {
                     VStack {
                             TextField("Имя", text: $vm.name)
                             .padding()
