@@ -43,6 +43,9 @@ struct FirstPersonUI: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                             TextField("Дата рождения", text: $vm.dateOfBirth)
+                            .onChange(of: vm.dateOfBirth) { newValue in
+                                vm.dateOfBirth = formattedDate(date: newValue)
+                            }
                             .keyboardType(.numberPad)
                             .padding()
                             .background(vm.isDateOfBirth ? redColor : .clear)
@@ -56,6 +59,9 @@ struct FirstPersonUI: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                             TextField("Номер загранпаспорта", text: $vm.passportNumber)
+                            .onChange(of: vm.passportNumber) { newValue in
+                                vm.passportNumber = formattedPassportNumber(number: newValue)
+                            }
                             .keyboardType(.numberPad)
                             .padding()
                             .background(vm.isPassportNumber ? redColor : .clear)
@@ -64,6 +70,9 @@ struct FirstPersonUI: View {
                         
                             TextField("Срок действия загранпаспорта", text:
                                         $vm.term)
+                            .onChange(of: vm.term) { newValue in
+                                vm.term = formattedDate(date: newValue)
+                            }
                             .keyboardType(.numberPad)
                             .padding()
                             .background(vm.isTerm ? redColor : .clear)
@@ -79,6 +88,54 @@ struct FirstPersonUI: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }
+    
+    func formattedPassportNumber(number: String) -> String {
+        let cleanNumber = number.components(separatedBy: CharacterSet.alphanumerics.inverted).joined().uppercased()
+        
+        if cleanNumber.isEmpty {
+            return ""
+        }
+        
+        let mask = "  -       "
+        var result = ""
+        var index = cleanNumber.startIndex
+        for ch in mask {
+            if ch == " " {
+                if index < cleanNumber.endIndex {
+                    result.append(cleanNumber[index])
+                    index = cleanNumber.index(after: index)
+                }
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+
+    
+    func formattedDate(date: String) -> String {
+        let cleanDate = date.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        
+        if cleanDate.isEmpty {
+            return ""
+        }
+        
+        let mask = "  .  .    "
+        var result = ""
+        var index = cleanDate.startIndex
+        for ch in mask {
+            if ch == " " {
+                if index < cleanDate.endIndex {
+                    result.append(cleanDate[index])
+                    index = cleanDate.index(after: index)
+                }
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+
 }
 
 struct FirstPersonUI_Previews: PreviewProvider {
