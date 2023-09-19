@@ -1,5 +1,4 @@
 import SwiftUI
-import WaterfallGrid
 
 struct ContentView: View {
     @StateObject private var vm = HotelViewModel()
@@ -49,15 +48,6 @@ struct ContentView: View {
                         }
                         NavigationLink {
                             RoomsView()
-                                .toolbar {
-                                    ToolbarItem(placement: .principal) {
-                                        Text(hotel.name)
-                                            .multilineTextAlignment(.center)
-                                            .font(.headline)
-                                            .padding()
-                                    }
-                                }
-                                .toolbarBackground(.visible, for: .navigationBar)
                         } label: {
                             HotelButtonBlueUI(text: "К выбору номера")
                         }
@@ -85,5 +75,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(HotelViewModel())
+            .environmentObject(PersonVM())
     }
 }

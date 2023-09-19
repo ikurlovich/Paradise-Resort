@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 32L6 32C4.34314 32 2.92896 31.4142 1.75739 30.2426C0.585815 29.071 0 27.6569 0 26L0 6C0 4.34314 0.585815 2.92896 1.75739 1.75739C2.92896 0.585815 4.34314 0 6 0L26 0C27.6569 0 29.071 0.585815 30.2426 1.75739C31.4142 2.92896 32 4.34314 32 6L32 26C32 27.6569 31.4142 29.071 30.2426 30.2426C29.071 31.4142 27.6569 32 26 32L12 32Z" id="Line" fill="#0D72FF" fill-opacity="0.101960786" fill-rule="evenodd" stroke="none" />
+  <g id="Group" transform="translate(10 12)">
+    <path d="M0 6L6 0" id="Line" fill="none" fill-rule="evenodd" stroke="#0D72FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M6 0L12 6" id="Line" fill="none" fill-rule="evenodd" stroke="#0D72FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

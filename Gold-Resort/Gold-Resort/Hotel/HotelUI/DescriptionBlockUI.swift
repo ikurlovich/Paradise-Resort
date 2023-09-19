@@ -60,7 +60,7 @@ struct DescriptionBlockUI: View {
                     Spacer()
                         .frame(width: 15)
                     VStack(alignment: .leading) {
-                        Text("Что включено")
+                        Text("Что не включено")
                             .font(.headline)
                         Text("Самое необходимое")
                             .foregroundStyle(.gray)

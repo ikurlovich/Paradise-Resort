@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M32 0L32 0L32 32L0 32L0 0L32 0Z" id="path_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" clip-rule="evenodd" fill-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="Frame 6" clip-path="url(#clip_1)">
+    <path d="M32 0L32 0L32 32L0 32L0 0L32 0Z" id="Frame-6" fill="none" stroke="none" />
+    <path d="M20 0L26 0C27.6569 0 29.0711 0.585786 30.2426 1.75736C31.4142 2.92893 32 4.34315 32 6L32 26C32 27.6569 31.4142 29.0711 30.2426 30.2426C29.0711 31.4142 27.6569 32 26 32L6 32C4.34315 32 2.92893 31.4142 1.75736 30.2426C0.585789 29.0711 1.90735e-06 27.6569 0 26L0 6C1.90735e-06 4.34315 0.585789 2.92893 1.75736 1.75736C2.92893 0.585786 4.34315 0 6 0L20 0Z" id="Line" fill="#0D72FF" fill-rule="evenodd" stroke="none" />
+    <g id="Group" transform="translate(11 15)">
+      <path d="M0 1L10 1" id="Line" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+    </g>
+    <g id="Group" transform="translate(15 11)">
+      <path d="M1 10L1 0" id="Line" fill="none" fill-rule="evenodd" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+    </g>
+  </g>
+</svg>

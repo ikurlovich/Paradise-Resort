@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-import WaterfallGrid
 
 struct RoomsView: View {
     @StateObject private var vm = RoomsViewModel()
     @State private var showNoInternetMessage = false
-    
+    @EnvironmentObject var vmH: HotelViewModel
     
     var body: some View {
             if let rooms = vm.rooms?.rooms {
@@ -35,15 +34,7 @@ struct RoomsView: View {
                                         RoomsButtonBlueUI()
                                         PriceHotelText(price: rooms[index].price, namePrice: rooms[index].price_per)
                                         NavigationLink {
-                                            Text("Test")
-                                                .toolbar {
-                                                    ToolbarItem(placement: .principal) {
-                                                        Text("Бронирование")
-                                                            .multilineTextAlignment(.center)
-                                                            .font(.headline)
-                                                    }
-                                                }
-                                                .toolbarBackground(.visible, for: .navigationBar)
+                                            OrderView()
                                         } label: {
                                             HotelButtonBlueUI(text: "Выбрать номер")
                                         }
@@ -55,6 +46,9 @@ struct RoomsView: View {
                         }
                     }
                 }
+                .navigationTitle(vmH.hotel?.name ?? "")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbarBackground(.visible, for: .navigationBar)
             } else if showNoInternetMessage {
                 DoglossUI()
             } else {
@@ -77,5 +71,7 @@ struct RoomsView_Previews: PreviewProvider {
         NavigationView {
             RoomsView()
         }
+        .environmentObject(PersonVM())
+        .environmentObject(HotelViewModel())
     }
 }

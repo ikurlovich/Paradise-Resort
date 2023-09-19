@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-import WaterfallGrid
 
 @main
 struct Gold_ResortApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(HotelViewModel())
+                .environmentObject(PersonVM())
         }
     }
 }
