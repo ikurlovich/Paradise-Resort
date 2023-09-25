@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct DoglossUI: View {
+    let message: String
+    
     var body: some View {
         VStack {
             Image("Dogloss")
                 .resizable()
                 .frame(width: 100, height: 100, alignment: .center)
-            Text("Пожалуйста, \nпроверьте соединение с интернетом!")
+            Text("Ошибка, \(message)")
                 .multilineTextAlignment(.center)
         }
     }

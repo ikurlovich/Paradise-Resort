@@ -100,7 +100,7 @@ struct OrderView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible, for: .navigationBar)
         } else if showNoInternetMessage {
-            DoglossUI()
+            DoglossUI(message: "")
         } else {
             DogWaitingUI()
                 .onAppear {

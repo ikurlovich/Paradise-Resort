@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RoomsView: View {
+    let hotelName: String
     @StateObject private var vm = RoomsViewModel()
     @State private var showNoInternetMessage = false
-    @EnvironmentObject var vmH: HotelViewModel
     
     var body: some View {
             if let rooms = vm.rooms?.rooms {
@@ -46,11 +46,11 @@ struct RoomsView: View {
                         }
                     }
                 }
-                .navigationTitle(vmH.hotel?.name ?? "")
+                .navigationTitle(hotelName)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(.visible, for: .navigationBar)
             } else if showNoInternetMessage {
-                DoglossUI()
+                DoglossUI(message: "")
             } else {
                 DogWaitingUI()
                     .onAppear {
@@ -69,7 +69,7 @@ struct RoomsView: View {
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RoomsView()
+            RoomsView(hotelName: "")
         }
         .environmentObject(PersonVM())
         .environmentObject(HotelViewModel())
